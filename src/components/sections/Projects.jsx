@@ -12,22 +12,22 @@ const projects = [
     github: 'https://github.com/yourusername/debate-ai',
   },
   {
-    title: 'Pollution Analysis Dashboard',
-    description: 'Data science dashboard for visualizing air quality trends using Python.',
-    tech: ['Pandas', 'Matplotlib', 'Seaborn', 'Jupyter'],
-    github: 'https://github.com/yourusername/pollution-dashboard',
+    title: 'Construction Web Application',
+    description: 'A web application for managing construction projects, including task assignments and progress tracking.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+    github: 'https://github.com/PremKumarY/Construction.git',
   },
   {
-    title: 'Hospital Management Application ',
-    description: 'In the fast-paced world of healthcare, its vital to manage hospital tasks effectively to ensure top-notch patient care.',
-    tech: ['React JS','MongoDB','Express','Node JS','MERN Stack'],
-    github: 'https://github.com/yourusername/resume-classifier',
-  },
-  {
-    title: 'College Management System',
-    description: 'when education has totally become digital, there comes a need for a system that can connect teachers, students, and HOD and that was the motivation behind building this project.',
+    title: 'Content Management System',
+    description: 'A comprehensive system for managing content across various platforms, ensuring efficient workflows and collaboration.',
     tech: ['Python', 'Django','HTML', 'CSS', 'Js','Bootstrap'],
-    github: 'https://github.com/yourusername/cctv-ai',
+    github: 'https://github.com/PremKumarY/CMS_test.git',
+  },
+  {
+    title: 'My Portfolio',
+    description: 'A personal portfolio showcasing my projects, skills, and experience.',
+    tech: ['Python', 'Django','HTML', 'CSS', 'Js','Bootstrap'],
+    github: 'https://github.com/PremKumarY/premKyadav.git',
   },
 ];
 
