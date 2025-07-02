@@ -50,7 +50,7 @@ export default function Home() {
           transition={{ delay: 0.8, duration: 0.8 }}
         >
           <a
-            href="/public/Prem_Kumar_Yadav_Resume_2025.pdf"
+            href="/public/Prem_Kumar_Yadav_Resume.pdf" // Adjust the path to your resume file
             download
             className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-semibold transition duration-300"
           >
