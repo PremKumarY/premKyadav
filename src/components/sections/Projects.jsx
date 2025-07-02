@@ -9,7 +9,7 @@ const projects = [
     title: 'Debate Assistant AI',
     description: 'A voice + text assistant to debate on Politics & Pollution using Wikipedia + NLP.',
     tech: ['React', 'Python', 'NLP', 'MongoDB'],
-    github: 'https://github.com/yourusername/debate-ai',
+    github: 'https://github.com/PremKumarY/frontend.git',
   },
   {
     title: 'Construction Web Application',

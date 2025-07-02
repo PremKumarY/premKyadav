@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const blogPosts = [
   {
-    title: "Getting Started with MERN Stack",
+    title: "Debate Assistant AI",
     date: "June 15, 2025",
     summary: "Learn how to set up your first MERN stack project with step-by-step instructions, best practices, and code samples.",
     link: "#"
