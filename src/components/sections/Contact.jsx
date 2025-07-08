@@ -4,30 +4,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaPaperPlane } from 'react-icons/fa';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [showPopup, setShowPopup] = useState(false);
+  const [message, setMessage] = useState(null);
 
-  const handleChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    formData.append("access_key", "fb00f9d6-543c-44af-b0cd-136c5043c0bc"); //Web3Forms API key
+    formData.append("subject", "New message from your portfolio contact form");
 
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbzQkf5VUPHRH87hp6Hg7azwQwVhEvqjxO2op4n0--haaHMfEuXqUcLnO31s9a1zwOFF9A/exec', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: { 'Content-Type': 'application/json' },
-      });
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
-      setShowPopup(true);
-      alert('✅ Your message has been sent successfully!');
-      setTimeout(() => setShowPopup(false), 4000);
-      setFormData({ name: '', email: '', message: '' });
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
 
-    } catch (err) {
-      console.error('Google Sheet submission failed:', err);
-      alert('❌ Failed to send message. Please try again later.');
+    if (res.success) {
+      setMessage("Thank you! Your message has been sent.");
+      event.target.reset();
+    } else {
+      setMessage("Oops! Something went wrong. Please try again.");
     }
   };
 
@@ -52,8 +54,13 @@ export default function Contact() {
           Want to work together, collaborate on a project, or just say hi? Drop a message below!
         </motion.p>
 
+        {/* Show message after form submission */}
+        {message && (
+          <div className="mb-6 text-green-400 font-semibold">{message}</div>
+        )}
+
         <motion.form
-          onSubmit={handleSubmit}
+          onSubmit={onSubmit}
           className="grid gap-6 max-w-xl mx-auto text-left"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -64,8 +71,6 @@ export default function Contact() {
             name="name"
             placeholder="Your Name"
             required
-            value={formData.name}
-            onChange={handleChange}
             className="w-full px-4 py-3 bg-white/10 text-white rounded-md focus:outline-none focus:ring-2 ring-blue-500"
           />
           <input
@@ -73,8 +78,6 @@ export default function Contact() {
             name="email"
             placeholder="Your Email"
             required
-            value={formData.email}
-            onChange={handleChange}
             className="w-full px-4 py-3 bg-white/10 text-white rounded-md focus:outline-none focus:ring-2 ring-blue-500"
           />
           <textarea
@@ -82,8 +85,6 @@ export default function Contact() {
             placeholder="Your Message"
             rows="5"
             required
-            value={formData.message}
-            onChange={handleChange}
             className="w-full px-4 py-3 bg-white/10 text-white rounded-md focus:outline-none focus:ring-2 ring-blue-500"
           />
           <button
@@ -94,21 +95,6 @@ export default function Contact() {
           </button>
         </motion.form>
       </div>
-
-      {/* Success Popup */}
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div
-            className="fixed bottom-10 right-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow-xl z-50"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.4 }}
-          >
-            ✅ Message sent successfully!
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

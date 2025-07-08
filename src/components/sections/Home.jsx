@@ -49,13 +49,22 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <a
+          {/* <a
             href="/public/Prem_Kumar_Yadav_Resume.pdf" // Adjust the path to your resume file
             download
             className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-semibold transition duration-300"
           >
             Download Resume
+          </a> */}
+          <a
+            href="/Prem_Kumar_Yadav_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-white font-semibold transition duration-300"
+          >
+            View / Download Resume
           </a>
+
           <a
             href="#Contact"
             className="px-6 py-3 border border-white rounded-full text-white hover:bg-white hover:text-black transition duration-300"
