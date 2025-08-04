@@ -9,6 +9,7 @@ import About from './components/sections/About';
 import Projects from './components/sections/Projects';
 import Contact from './components/sections/Contact';
 import Blog from './components/sections/Blog';
+import CertificateSection from './components/sections/CertificateSection';
 
 
 
@@ -29,6 +30,8 @@ export default function App() {
           <About />
           <Projects />
           <Contact />
+          <CertificateSection />
+          
           <Blog />
           <Footer />
         </div>
