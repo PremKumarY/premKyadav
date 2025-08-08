@@ -18,11 +18,12 @@ export default function MobileMenu({ menuOpen, setMenuOpen }) {
 
       {/* Optional: Add links for mobile menu */}
       <div className="flex flex-col items-center space-y-6 text-white text-xl mt-12">
-        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#About" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#Projects" onClick={() => setMenuOpen(false)}>Projects</a>
-        <a href="#Blog" onClick={() => setMenuOpen(false)}>Blog</a>
-        <a href="#Contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+        <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+        <Link to="/certificates" onClick={() => setMenuOpen(false)}>Certificates</Link>
+        <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
     </div>
   );
