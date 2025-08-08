@@ -13,8 +13,8 @@ function Navbar({ menuOpen, setMenuOpen }) {
         <div className="flex justify-between items-center h-16">
 
           {/* Brand */}
-          <a href="/" className="text-xl md:text-2xl font-bold text-white tracking-wide drop-shadow-sm">
-            PREM<span className="text-blue-500">K</span>YADAV</a>
+          <Link to="/" className="text-xl md:text-2xl font-bold text-white tracking-wide drop-shadow-sm">
+            PREM<span className="text-blue-500">K</span>YADAV</Link>
 
           {/* Hamburger Menu for Mobile */}
           <div
@@ -26,11 +26,12 @@ function Navbar({ menuOpen, setMenuOpen }) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className='text-gray-300 hover:text-white transition-colors'>Home</a>
-            <a href="#About" className='text-gray-300 hover:text-white transition-colors'>About</a>
-            <a href="#Projects" className='text-gray-300 hover:text-white transition-colors'>Projects</a>
-            <a href="#Blog" className='text-gray-300 hover:text-white transition-colors'>Blog</a>
-            <a href="#Contact" className='text-gray-300 hover:text-white transition-colors'>Contact</a>
+            <Link to="/" className='text-gray-300 hover:text-white transition-colors'>Home</Link>
+            <Link to="/about" className='text-gray-300 hover:text-white transition-colors'>About</Link>
+            <Link to="/projects" className='text-gray-300 hover:text-white transition-colors'>Projects</Link>
+            <Link to="/certificates" className='text-gray-300 hover:text-white transition-colors'>Certificates</Link>
+            <Link to="/blog" className='text-gray-300 hover:text-white transition-colors'>Blog</Link>
+            <Link to="/contact" className='text-gray-300 hover:text-white transition-colors'>Contact</Link>
           </div>
         </div>
       </div>
