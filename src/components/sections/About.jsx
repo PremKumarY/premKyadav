@@ -95,6 +95,18 @@ export default function About() {
             <p>Tensorflow</p>
           </div>
           <div className="flex flex-col items-center">
+            <SiTensorflow className="text-4xl text-yellow-300 mb-2" />
+            <p>Tensorflow</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiTensorflow className="text-4xl text-yellow-300 mb-2" />
+            <p>Tensorflow</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiTensorflow className="text-4xl text-yellow-300 mb-2" />
+            <p>Tensorflow</p>
+          </div>
+          <div className="flex flex-col items-center">
             <SiJupyter className="text-4xl text-yellow-300 mb-2" />
             <p>Jupyter</p>
           </div>
