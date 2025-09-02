@@ -18,7 +18,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }) {
 
       {/* Optional: Add links for mobile menu */}
       <div className="flex flex-col items-center space-y-6 text-white text-xl mt-12">
-        <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
         <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
         <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
         <Link to="/certificates" onClick={() => setMenuOpen(false)}>Certificates</Link>
